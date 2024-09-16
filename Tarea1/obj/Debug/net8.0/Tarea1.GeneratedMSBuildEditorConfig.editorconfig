@@ -1,0 +1,59 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Tarea1
+build_property.RootNamespace = Tarea1
+build_property.ProjectDir = C:\Users\Edgard\Desktop\Amadis genao\Tarea1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Edgard\Desktop\Amadis genao\Tarea1
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Pages/AcercaDe.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNlcmNhRGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Pages/AprendeMas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXByZW5kZU1hcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Pages/Calculadora.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FsY3VsYWRvcmEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Pages/Inicio.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5pY2lvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Pages/TablaMultiplicar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibGFNdWx0aXBsaWNhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-haxi8t1m0m
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea1/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ipgvdiqwh8

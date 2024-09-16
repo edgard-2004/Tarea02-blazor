@@ -1,0 +1,85 @@
+﻿@page "/"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+
+    <h1 class="titulo">Gracias por visitar nuestro sitio web</h1>
+
+    <h3 class="titulo">Bienvenidos, esta tarea fue asignada por Amadis Suarez Genao</h3>
+
+  
+    <div class="phrase-container">
+        <img src="https://blogimage.vantagecircle.com/content/images/2022/06/motivacion-laboral-.png" class="phrase-image" />
+        <p class="custom-phrase">
+            "La programación no es solo escribir código, es la oportunidad de resolver problemas, crear el futuro y aprender constantemente.
+            Cada error es un paso hacia el éxito, y cada línea de código es un avance hacia tus sueños."
+        </p>
+    </div>
+
+
+</body>
+</html>
+
+<style>
+
+    body{
+        background-color: mediumpurple;
+    }
+    
+    .titulo{
+        color:whitesmoke;
+        text-align: center;
+        font-weight: bolder
+    }
+
+    .phrase-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px; 
+    background-color: #000;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(50, 100, 320, 0.20);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    color: white;
+}
+
+.phrase-container:hover {
+    background-color: #e64a19;
+    box-shadow: 0 10px 20px rgba(90, 30, 20, 0.25);
+}
+
+.phrase-image {
+    width: 40%; 
+    height: auto;
+    margin-right: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.phrase-image:hover {
+    transform: scale(1.05);
+}
+
+.custom-phrase {
+    font-family: 'Georgia', serif;
+    font-size: 1rem; 
+    line-height: 1.5;
+    max-width: 55%; 
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+    text-shadow: 2px 2px 6px rgba(80, 50, 10, 0.3);
+}
+
+.custom-phrase:hover {
+    color: #ffeb3b;
+    text-shadow: 4px 4px 8px rgba(55, 255, 155, 0.4);
+}
+
+</style>

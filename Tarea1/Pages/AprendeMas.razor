@@ -1,0 +1,81 @@
+﻿
+@page "/AprendeMas"
+<h3>Aprende mas </h3>
+<p>
+    En esta seccion encontraras contenido que te ayudara a aprender mas sobre Blazor WebAssembly
+</p>
+
+<div class="row">
+    @foreach (var video in videos)
+    {
+        <div class="col-md-4 mb-5">
+            <div class="card" style="height: 100%;">
+                <img class="card-img-top" src="@GetYoutubeThumbnailUrl(video.Url)" />
+                <div class="card-body">
+                    <h5 class="card-title">@video.Titulo</h5>
+                    <p class="card-text">@video.Descripcion</p>
+                    <p class="card-text"> </p>
+                    <a href="@video.Url" class="btn btn-primary" target="_blank">Ver Video</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+
+    public class Video
+    {
+        public string Titulo { get; set; }
+        public string Url { get; set; }
+        public string Descripcion { get; set; }
+
+        public Video(string titulo, string url, string descripcion)
+        {
+            this.Titulo = titulo;
+            this.Url = url;
+            this.Descripcion = descripcion;
+        }
+    }
+
+    List<Video> videos = new List<Video>
+    {
+        new Video("Blazor en 10 minutos - ¿Qué es Blazor?",
+        "https://youtu.be/VDkiB5F7FH0",
+        "Este video ofrece una introducción rápida a Blazor, una tecnología de Microsoft que permite construir aplicaciones web interactivas utilizando C# y .NET. En solo 10 minutos, aprenderás los conceptos básicos sobre cómo funciona Blazor y por qué es útil para desarrolladores que prefieren trabajar con .NET en lugar de JavaScript."),
+
+    new Video("Curso de Blazor WebAssembly",
+        "https://youtu.be/mdwgD8Id5-E?list=PL6L-Gx15Mu591Wh6j5QENKZ2wJ66iTqJi",
+        "En este curso completo de Blazor WebAssembly, aprenderás desde los fundamentos hasta conceptos avanzados sobre cómo crear aplicaciones web con Blazor. El curso cubre temas como el ciclo de vida de los componentes, la gestión del estado, la interactividad y la integración con APIs. Es ideal para desarrolladores que buscan profundizar en el ecosistema Blazor."),
+
+    new Video("Conectar Blazor a un API por medio de Swagger",
+        "https://youtu.be/cBmkfPlVghY",
+        "En este tutorial, aprenderás cómo conectar una aplicación Blazor con una API utilizando Swagger. Se explica paso a paso cómo configurar la documentación de la API y cómo consumirla desde una aplicación cliente Blazor. Es una guía práctica para desarrolladores que quieren conectar aplicaciones frontend con backend de manera eficiente."),
+
+    new Video("CRUD Completo con Blazor Webassembly .NET8",
+        "https://youtu.be/stkr4IG2VrA",
+        "Este tutorial te mostrará cómo construir un CRUD (Crear, Leer, Actualizar, Eliminar) completo utilizando Blazor WebAssembly en la última versión de .NET 8. Aprenderás a estructurar tu aplicación, manejar la base de datos y construir una interfaz de usuario eficiente que interactúe con los datos de manera dinámica."),
+
+    new Video("Seguridad con JWT para aplicaciones Blazor Webassembly .NET 8",
+        "https://youtu.be/pfpkAkFVZuw",
+        "Este video cubre la implementación de seguridad en aplicaciones Blazor WebAssembly utilizando tokens JWT (JSON Web Token). Aprenderás cómo autenticar y autorizar usuarios de manera segura en aplicaciones distribuidas. También se explican conceptos clave como la autenticación basada en roles, la protección de rutas y la gestión de tokens en el lado cliente.")
+    };
+
+    private string GetYoutubeThumbnailUrl(string videoUrl)
+    {
+        var videoId = GetVideoIdFromUrl(videoUrl);
+        return $"https://i.ytimg.com/vi/{videoId}/hqdefault.jpg";
+    }
+
+    private string GetVideoIdFromUrl(string videoUrl)
+    {
+        var uri = new Uri(videoUrl);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        if (query.AllKeys.Contains("v"))
+        {
+            return query["v"]; 
+        }
+
+        return uri.Segments.Last(); 
+    }
+}
