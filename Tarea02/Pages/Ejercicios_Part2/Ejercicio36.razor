@@ -1,0 +1,45 @@
+﻿@page "/Ejercicio36"
+
+<h3>Este programa calcula el n-ésimo número de la serie de Fibonacci.</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un entero (n): </label>
+    <input type="number" @bind="numeroInput" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="CalcularFibonacci">Calcular Fibonacci</button>
+</div>
+
+@if (resultado.HasValue)
+{
+        <p>El número de Fibonacci en la posición @numeroInput es: @resultado.Value</p>
+}
+
+@code {
+    private int numeroInput;
+    private int? resultado = null; 
+
+    private void CalcularFibonacci()
+    {
+        resultado = Fibonacci(numeroInput);
+    }
+
+    private int Fibonacci(int n)
+    {
+        if (n < 0) throw new ArgumentException("El número debe ser mayor o igual a 0.");
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        int a = 0, b = 1, temp;
+
+        for (int i = 2; i <= n; i++)
+        {
+            temp = a + b;
+            a = b;
+            b = temp;
+        }
+
+        return b;
+    }
+}

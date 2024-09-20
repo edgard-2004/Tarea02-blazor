@@ -1,0 +1,40 @@
+﻿@page "/Ejercicio16"
+
+<h3>Este programa verifica si un código ASCII corresponde a una letra minúscula</h3>
+
+<div class="m-3">
+    <label for="codigoAscii">Ingresa un código ASCII: </label>
+    <input type="number" @bind="codigoAscii" id="codigoAscii" />
+</div>
+
+<div class="m-3">
+    <button @onclick="VerificarLetraMinuscula">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p>El código ASCII @codigoAscii corresponde a una letra minúscula.</p>
+}
+else if (resultado == 0)
+{
+    <p>El código ASCII @codigoAscii no corresponde a una letra minúscula.</p>
+}
+
+@code {
+    private int codigoAscii;
+    private int? resultado = null;
+
+    private void VerificarLetraMinuscula()
+    {
+        resultado = EsLetraMinuscula(codigoAscii);
+    }
+
+    private int EsLetraMinuscula(int codigo)
+    {
+        if (codigo >= 97 && codigo <= 255)
+        {
+            return 1;
+        }
+        return 0;
+    }
+}

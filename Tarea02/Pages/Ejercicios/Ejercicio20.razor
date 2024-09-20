@@ -1,0 +1,48 @@
+﻿@page "/Ejercicio20"
+
+<h3>Este programa verifica si todos los dígitos son iguales, retorna 1 si todos los valores son iguales y 0 sino</h3>
+
+<div>
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div>
+    <button @onclick="VerificarDigitosIguales">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p>Todos los dígitos del número son iguales, 1.</p>
+}
+else if (resultado == 0)
+{
+    <p>No todos los dígitos del número son iguales, 0.</p>
+}
+
+@code {
+    private int numero;
+    private int? resultado = null;
+
+    private void VerificarDigitosIguales()
+    {
+        resultado = SonDigitosIguales(numero);
+    }
+
+    private int SonDigitosIguales(int num)
+    {
+        num = Math.Abs(num); 
+        int digito = num % 10; 
+
+        while (num > 0)
+        {
+            if (num % 10 != digito)
+            {
+                return 0; 
+            }
+            num /= 10; 
+        }
+
+        return 1; 
+    }
+}

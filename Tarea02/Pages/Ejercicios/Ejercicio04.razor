@@ -1,0 +1,45 @@
+﻿@page "/Ejercicio4"
+
+<h3>Este programa retorna la cantidad de dígitos pares</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="CalcularDigitosPares">Contar Dígitos Pares</button>
+</div>
+
+@if (resultado >= 0)
+{
+    <p>Cantidad de dígitos pares: @resultado</p>
+}
+
+@code {
+    private int numero = 0;
+    private int resultado = -1;
+
+    private void CalcularDigitosPares()
+    {
+        resultado = ContarDigitosPares(numero);
+    }
+
+    private int ContarDigitosPares(int numero)
+    {
+        int contadorPares = 0;
+        numero = Math.Abs(numero);
+
+        while (numero > 0)
+        {
+            int digito = numero % 10;
+            if (digito % 2 == 0)
+            {
+                contadorPares++;
+            }
+            numero /= 10;
+        }
+
+        return contadorPares;
+    }
+}

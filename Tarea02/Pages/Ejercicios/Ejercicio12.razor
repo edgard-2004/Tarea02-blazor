@@ -1,0 +1,54 @@
+﻿@page "/Ejercicio12"
+
+<h3>Verificar si un dígito está en el número</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div class="m-3">
+    <label for="digito">Ingresa un dígito: </label>
+    <input type="number" @bind="digito" id="digito" min="0" max="9" />
+</div>
+
+<div>
+    <button @onclick="VerificarDigitoEnNumero">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p>El dígito @digito está presente en el número @numero.</p>
+}
+else if (resultado == 0)
+{
+    <p>El dígito @digito no está presente en el número @numero.</p>
+}
+
+@code {
+    private int numero;
+    private int digito;
+    private int? resultado = null;
+
+    private void VerificarDigitoEnNumero()
+    {
+        resultado = ContieneDigito(numero, digito);
+    }
+
+    private int ContieneDigito(int numero, int digito)
+    {
+        numero = Math.Abs(numero); 
+
+        while (numero > 0)
+        {
+            int ultimoDigito = numero % 10;
+            if (ultimoDigito == digito)
+            {
+                return 1; 
+            }
+            numero /= 10; 
+        }
+
+        return 0; 
+    }
+}

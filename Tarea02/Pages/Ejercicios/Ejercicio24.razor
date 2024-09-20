@@ -1,0 +1,44 @@
+﻿@page "/Ejercicio24"
+
+<h3>Este programa verifica si dos números son inversos</h3>
+
+<div class="m-3">
+    <label for="numero1">Ingresa el primer número (2 dígitos): </label>
+    <input type="number" @bind="numero1" id="numero1" min="10" max="99" />
+</div>
+
+<div class="m-3">
+    <label for="numero2">Ingresa el segundo número (2 dígitos): </label>
+    <input type="number" @bind="numero2" id="numero2" min="10" max="99" />
+</div>
+
+<div>
+    <button @onclick="VerificarInversos">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p>Los números @numero1 y @numero2 son inversos.</p>
+}
+else if (resultado == 0)
+{
+    <p>Los números @numero1 y @numero2 no son inversos.</p>
+}
+
+@code {
+    private int numero1;
+    private int numero2;
+    private int? resultado = null;
+
+    private void VerificarInversos()
+    {
+        resultado = SonInversos(numero1, numero2);
+    }
+
+    private int SonInversos(int num1, int num2)
+    {
+        
+        int num2Invertido = (num2 % 10) * 10 + (num2 / 10);
+        return (num1 == num2Invertido) ? 1 : 0;
+    }
+}

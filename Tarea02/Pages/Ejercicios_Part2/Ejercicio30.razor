@@ -1,0 +1,101 @@
+﻿@page "/Ejercicio30"
+
+<h3>Este programa encuentra la posición del mayor número primo en un vector de 10 posiciones.</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numeroInput" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="AgregarNumero">Agregar Número</button>
+    <button @onclick="EncontrarMayorPrimo">Encontrar Mayor Primo</button>
+</div>
+
+@if (numeros.Count > 0)
+{
+    <h4>Números Ingresados:</h4>
+    <ul>
+        @foreach (var number in numeros)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
+
+@if (posicionMayorPrimo >= 0)
+{
+    <p>La posición del mayor número primo es: @posicionMayorPrimo.</p>
+}
+
+@if (posicionMayorPrimo == -1 && numeros.Count == 10)
+{
+    <p>No se encontró ningún número primo.</p>
+}
+
+@code {
+    private List<int> numeros = new List<int>();
+    private int numeroInput;
+    private int posicionMayorPrimo = -1;
+
+    private void AgregarNumero()
+    {
+        if (numeros.Count < 10)
+        {
+            if (numeroInput > 0) 
+            {
+                numeros.Add(numeroInput);
+                numeroInput = 0; 
+            }
+        }
+    }
+
+    private void EncontrarMayorPrimo()
+    {
+        if (numeros.Count == 10)
+        {
+            posicionMayorPrimo = ObtenerPosicionMayorPrimo(numeros.ToArray());
+        }
+        else
+        {
+            posicionMayorPrimo = -1; 
+        }
+    }
+
+    private int ObtenerPosicionMayorPrimo(int[] arreglo)
+    {
+        int mayorPrimo = -1;
+        int posicion = -1;
+
+        for (int i = 0; i < arreglo.Length; i++)
+        {
+            if (EsPrimo(arreglo[i]))
+            {
+                if (arreglo[i] > mayorPrimo)
+                {
+                    mayorPrimo = arreglo[i];
+                    posicion = i;
+                }
+            }
+        }
+
+        return posicion; 
+    }
+
+    private bool EsPrimo(int numero)
+    {
+        if (numero <= 1) return false;
+        if (numero == 2) return true;
+        if (numero % 2 == 0) return false;
+
+        for (int i = 3; i <= Math.Sqrt(numero); i += 2)
+        {
+            if (numero % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

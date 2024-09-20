@@ -1,0 +1,57 @@
+﻿@page "/Ejercicio18"
+<h3>Este programa verifica si un número es el factorial de alguno de sus dígitos</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="VerificarFactorial">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p>El número @numero es el factorial de alguno de sus dígitos.</p>
+}
+else if (resultado == 0)
+{
+    <p>El número @numero no es el factorial de ninguno de sus dígitos.</p>
+}
+
+@code {
+    private int numero;
+    private int? resultado = null;
+
+    private void VerificarFactorial()
+    {
+        resultado = EsFactorialDeAlgunDigito(numero);
+    }
+
+    private int EsFactorialDeAlgunDigito(int num)
+    {
+        num = Math.Abs(num); 
+
+        while (num > 0)
+        {
+            int digito = num % 10; 
+            if (EsFactorial(digito) == numero) 
+            {
+                return 1;
+            }
+            num /= 10; 
+        }
+
+        return 0; 
+    }
+
+    private int EsFactorial(int n)
+    {
+        int factorial = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}

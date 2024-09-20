@@ -1,0 +1,38 @@
+﻿@page "/Ejercicio14"
+
+<h3>Este programa encuentra el mayor de dos números</h3>
+
+<div class="m-3">
+    <label for="numero1">Ingresa el primer número: </label>
+    <input type="number" @bind="numero1" id="numero1" />
+</div>
+
+<div class="m-3">
+    <label for="numero2">Ingresa el segundo número: </label>
+    <input type="number" @bind="numero2" id="numero2" />
+</div>
+
+<div class="m-3">
+    <button @onclick="CalcularMayor">Calcular Mayor</button>
+</div>
+
+@if (resultado != null)
+{
+    <p>El número mayor es: @resultado</p>
+}
+
+@code {
+    private int numero1;
+    private int numero2;
+    private int? resultado = null;
+
+    private void CalcularMayor()
+    {
+        resultado = MayorDeDosNumeros(numero1, numero2);
+    }
+
+    private int MayorDeDosNumeros(int num1, int num2)
+    {
+        return (num1 > num2) ? num1 : num2;
+    }
+}

@@ -1,0 +1,77 @@
+﻿@page "/Ejercicio40"
+
+<h3>Este programa cuenta la cantidad de números que terminan en un dígito específico en un vector de 10 posiciones.</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numeroInput" id="numero" />
+</div>
+
+<div class="m-3">
+    <label for="digito">Ingresa un dígito (0-9): </label>
+    <input type="number" @bind="digitoInput" id="digito" min="0" max="9" />
+</div>
+
+<div class="m-3">
+    <button @onclick="AgregarNumero">Agregar Número</button>
+    <button @onclick="ContarTerminadosEnDigito">Contar Números Terminados en Dígito</button>
+</div>
+
+@if (numeros.Count > 0)
+{
+    <h4>Números Ingresados:</h4>
+    <ul>
+        @foreach (var number in numeros)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
+
+@if (cantidadTerminados >= 0)
+{
+    <p>Cantidad de números que terminan en @digitoInput: @cantidadTerminados.</p>
+}
+
+@code {
+    private List<int> numeros = new List<int>();
+    private int numeroInput;
+    private int digitoInput;
+    private int cantidadTerminados = -1; 
+
+    private void AgregarNumero()
+    {
+        if (numeros.Count < 10)
+        {
+            numeros.Add(numeroInput);
+            numeroInput = 0; 
+        }
+    }
+
+    private void ContarTerminadosEnDigito()
+    {
+        if (numeros.Count == 10)
+        {
+            cantidadTerminados = ContarNumerosTerminadosEnDigito(numeros.ToArray(), digitoInput);
+        }
+        else
+        {
+            cantidadTerminados = -1; 
+        }
+    }
+
+    private int ContarNumerosTerminadosEnDigito(int[] arreglo, int digito)
+    {
+        int count = 0;
+
+        foreach (var numero in arreglo)
+        {
+            if (numero % 10 == digito)
+            {
+                count++;
+            }
+        }
+
+        return count; 
+    }
+}

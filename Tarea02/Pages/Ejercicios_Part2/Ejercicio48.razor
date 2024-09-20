@@ -1,0 +1,71 @@
+﻿@page "/Ejercicio48"
+
+<h3>Este programa encuentra la posición del mayor número primo en una matriz de 4x4.</h3>
+
+<div class="m-3">
+    <h4>Ingresa los datos de la matriz:</h4>
+    @for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+                    <label for="matriz-@i-@j">Elemento [@i, @j]: </label>
+                    <input type="number" @bind="matriz[i, j]" id="matriz-@i-@j" />
+        }
+    }
+</div>
+
+<div class="m-3">
+    <button @onclick="EncontrarPosicionDelMayorPrimo">Encontrar Posición del Mayor Primo</button>
+</div>
+
+@if (fila >= 0 && columna >= 0)
+{
+        <p>El mayor número primo se encuentra en la posición: Fila: @fila, Columna: @columna.</p>
+}
+else
+{
+        <p>No se encontraron números primos en la matriz.</p>
+}
+
+@code {
+    private int[,] matriz = new int[4, 4];
+    private int fila = -1; 
+    private int columna = -1; 
+
+    private void EncontrarPosicionDelMayorPrimo()
+    {
+        (fila, columna) = ObtenerPosicionDelMayorPrimo(matriz);
+    }
+
+    private (int, int) ObtenerPosicionDelMayorPrimo(int[,] matriz)
+    {
+        int mayorPrimo = -1;
+        int posicionFila = -1;
+        int posicionColumna = -1;
+
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (EsPrimo(matriz[i, j]) && matriz[i, j] > mayorPrimo)
+                {
+                    mayorPrimo = matriz[i, j];
+                    posicionFila = i;
+                    posicionColumna = j;
+                }
+            }
+        }
+
+        return (posicionFila, posicionColumna); 
+    }
+
+    private bool EsPrimo(int numero)
+    {
+        if (numero < 2) return false;
+        for (int i = 2; i <= Math.Sqrt(numero); i++)
+        {
+            if (numero % i == 0) return false;
+        }
+        return true; 
+    }
+}

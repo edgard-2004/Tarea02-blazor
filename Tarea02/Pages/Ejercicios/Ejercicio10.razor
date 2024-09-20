@@ -1,0 +1,36 @@
+﻿@page "/Ejercicio10"
+
+<h3>Este programa obtiene el primer numero de cualquier digito</h3>
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="ObtenerPrimerDigito">Obtener Primer Dígito</button>
+</div>
+
+@if (primerDigito != null)
+{
+    <p>El primer dígito de @numero es: @primerDigito</p>
+}
+
+@code {
+    private int numero;
+    private int? primerDigito;
+
+    private void ObtenerPrimerDigito()
+    {
+        primerDigito = CalcularPrimerDigito(numero);
+    }
+
+    private int CalcularPrimerDigito(int numero)
+    {
+        numero = Math.Abs(numero); 
+        while (numero >= 10)
+        {
+            numero /= 10; 
+        }
+        return numero;
+    }
+}

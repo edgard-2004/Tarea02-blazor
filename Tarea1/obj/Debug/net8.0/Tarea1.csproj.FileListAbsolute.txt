@@ -2060,3 +2060,4 @@ C:\Users\Edgard\Desktop\Amadis genao\Tarea1\obj\Debug\net8.0\Tarea1.dll
 C:\Users\Edgard\Desktop\Amadis genao\Tarea1\obj\Debug\net8.0\refint\Tarea1.dll
 C:\Users\Edgard\Desktop\Amadis genao\Tarea1\obj\Debug\net8.0\Tarea1.pdb
 C:\Users\Edgard\Desktop\Amadis genao\Tarea1\obj\Debug\net8.0\ref\Tarea1.dll
+C:\Users\Edgard\Desktop\Amadis genao\Tarea1\obj\Debug\net8.0\Tarea1.sourcelink.json

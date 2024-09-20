@@ -1,0 +1,66 @@
+﻿@page "/Ejercicio26"
+
+<h3>Este programa encuentra el mayor valor en un vector de 10 números enteros</h3>
+
+<div>
+    @for (int i = 0; i < 10; i++)
+    {
+        <div class="m-3">
+            <label for="numero_@i">Número @i: </label>
+            <input type="number" @bind="numeros[i]" id="numero_@i" />
+        </div>
+    }
+</div>
+
+<div class="m-3">
+    <button @onclick="CalcularMayor">Calcular Mayor</button>
+</div>
+
+@if (resultado != null)
+{
+    <p>El número mayor del vector es: @resultado</p>
+}
+
+@if (error != null)
+{
+    <p style="color:red">@error</p>
+}
+
+@code {
+    private int[] numeros = new int[10];  
+    private int? resultado = null;  
+    private string? error = null;  
+
+    private void CalcularMayor()
+    {
+        error = null; 
+        if (numeros.Any(n => n == 0))
+        {
+            error = "Todos los campos deben contener valores distintos de 0.";
+            return;  
+
+        try
+        {
+            resultado = EncontrarMayor(numeros); 
+        }
+        catch (Exception ex)
+        {
+            error = "Ocurrió un error al calcular el mayor número: " + ex.Message; 
+        }
+    }
+
+     int EncontrarMayor(int[] vector)
+    {
+        int mayor = vector[0];  
+        for (int i = 1; i < vector.Length; i++)  
+        {
+            if (vector[i] > mayor)
+            {
+                mayor = vector[i]; 
+            }
+        }
+
+        return mayor; 
+    }
+}
+}

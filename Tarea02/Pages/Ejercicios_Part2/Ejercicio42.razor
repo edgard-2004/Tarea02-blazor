@@ -1,0 +1,72 @@
+﻿@page "/Ejercicio42"
+
+<h3>Este programa cuenta cuántas veces se repite el mayor dato en una matriz de 3x4.</h3>
+
+<div class="m-3">
+    <h4>Ingresa los datos de la matriz:</h4>
+    @for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+                    <label for="matriz-@i-@j">Elemento [@i, @j]: </label>
+                    <input type="number" @bind="matriz[i, j]" id="matriz-@i-@j" />
+        }
+    }
+</div>
+
+<div class="m-3">
+    <button @onclick="ContarRepeticionesDelMayor">Contar Repeticiones del Mayor Dato</button>
+</div>
+
+@if (cantidadRepeticiones >= 0)
+{
+        <p>El mayor dato de la matriz es: @mayorDato y se repite @cantidadRepeticiones veces.</p>
+}
+
+@code {
+    private int[,] matriz = new int[3, 4];
+    private int mayorDato;
+    private int cantidadRepeticiones = -1; 
+
+    private void ContarRepeticionesDelMayor()
+    {
+        mayorDato = ObtenerMayorDeLaMatriz(matriz);
+        cantidadRepeticiones = ContarRepeticiones(matriz, mayorDato);
+    }
+
+    private int ObtenerMayorDeLaMatriz(int[,] matriz)
+    {
+        int mayor = matriz[0, 0];
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (matriz[i, j] > mayor)
+                {
+                    mayor = matriz[i, j];
+                }
+            }
+        }
+
+        return mayor; 
+    }
+
+    private int ContarRepeticiones(int[,] matriz, int valor)
+    {
+        int count = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (matriz[i, j] == valor)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+}

@@ -1,0 +1,60 @@
+﻿@page "/Ejercicio8"
+
+<h3>Este programa verifica si un número está en los primeros 30 números de Fibonacci, retorna 1 si esta y 0 sino esta</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="VerificarFibonacci">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p> 1 está en los primeros 30 números de Fibonacci.</p>
+}
+else if (resultado == 0 && numero != 0)
+{
+    <p> 0 no está en los primeros 30 números de Fibonacci.</p>
+}
+
+@code {
+    private int numero = 0;
+    private int resultado = -1;
+
+    private void VerificarFibonacci()
+    {
+        resultado = EsFibonacci(numero);
+    }
+
+    private int EsFibonacci(int numero)
+    {
+        int[] fibonacci = ObtenerSerieFibonacci(30);
+
+        foreach (int n in fibonacci)
+        {
+            if (n == numero)
+            {
+                return 1;
+            }
+        }
+
+        return 0;
+    }
+
+    private int[] ObtenerSerieFibonacci(int elementos)
+    {
+        int[] fibonacci = new int[elementos];
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+
+        for (int i = 2; i < elementos; i++)
+        {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        return fibonacci;
+    }
+}

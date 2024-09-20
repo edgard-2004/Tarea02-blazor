@@ -1,0 +1,27 @@
+﻿@page "/Ejercicio2"
+
+<h3>Este programa devuelve el ultimo digito de un entero</h3>
+
+<div class="form-group, m-3">
+    <label for="txtNumero">Numero</label>
+    <input type="number" class="form-control" id="txtNumero" @bind="numero" />
+</div>
+
+<div class="m-3">
+    <button class="btn btn-primary" @onclick ="ContarDigitos">Calcular</button>
+</div>
+
+<div>
+    El ultimo digito es @resultado
+</div>
+
+@code 
+{
+    private int numero = 0;
+    string resultado= "";
+
+    private void ContarDigitos()
+    {
+        resultado = (numero % 10).ToString();
+    }
+}

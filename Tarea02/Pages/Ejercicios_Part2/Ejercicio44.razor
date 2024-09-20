@@ -1,0 +1,83 @@
+﻿@page "/Ejercicio44"
+<h3>Este programa cuenta cuántas veces se repite el mayor número primo en una matriz de 3x4.</h3>
+
+<div class="m-3">
+    <h4>Ingresa los datos de la matriz:</h4>
+    @for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+                    <label for="matriz-@i-@j">Elemento [@i, @j]: </label>
+                    <input type="number" @bind="matriz[i, j]" id="matriz-@i-@j" />
+        }
+    }
+</div>
+
+<div class="m-3">
+    <button @onclick="ContarRepeticionesDelMayorPrimo">Contar Repeticiones del Mayor Primo</button>
+</div>
+
+@if (cantidadRepeticiones >= 0)
+{
+        <p>El mayor número primo de la matriz es: @mayorPrimo y se repite @cantidadRepeticiones veces.</p>
+}
+
+@code {
+    private int[,] matriz = new int[3, 4];
+    private int mayorPrimo;
+    private int cantidadRepeticiones = -1; 
+
+    private void ContarRepeticionesDelMayorPrimo()
+    {
+        mayorPrimo = ObtenerMayorPrimoDeLaMatriz(matriz);
+        cantidadRepeticiones = ContarRepeticiones(matriz, mayorPrimo);
+    }
+
+    private int ObtenerMayorPrimoDeLaMatriz(int[,] matriz)
+    {
+        int mayor = -1;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (EsPrimo(matriz[i, j]) && matriz[i, j] > mayor)
+                {
+                    mayor = matriz[i, j];
+                }
+            }
+        }
+
+        return mayor; 
+    }
+
+    private int ContarRepeticiones(int[,] matriz, int valor)
+    {
+        if (valor == -1) return 0; 
+
+        int count = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (matriz[i, j] == valor)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count; 
+    }
+
+    private bool EsPrimo(int numero)
+    {
+        if (numero < 2) return false;
+        for (int i = 2; i <= Math.Sqrt(numero); i++)
+        {
+            if (numero % i == 0) return false;
+        }
+        return true; 
+    }
+}

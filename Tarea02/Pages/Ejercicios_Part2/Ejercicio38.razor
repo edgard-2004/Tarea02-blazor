@@ -1,0 +1,71 @@
+﻿@page "/Ejercicio38"
+
+<h3>Este programa cuenta la cantidad de números que terminan en 3 en un vector de 10 posiciones.</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numeroInput" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="AgregarNumero">Agregar Número</button>
+    <button @onclick="ContarTerminadosEn3">Contar Números Terminados en 3</button>
+</div>
+
+@if (numeros.Count > 0)
+{
+        <h4>Números Ingresados:</h4>
+        <ul>
+        @foreach (var number in numeros)
+        {
+                    <li>@number</li>
+        }
+        </ul>
+}
+
+@if (cantidadTerminadosEn3 >= 0)
+{
+        <p>Cantidad de números que terminan en 3: @cantidadTerminadosEn3.</p>
+}
+
+@code {
+    private List<int> numeros = new List<int>();
+    private int numeroInput;
+    private int cantidadTerminadosEn3 = -1; 
+
+    private void AgregarNumero()
+    {
+        if (numeros.Count < 10)
+        {
+            numeros.Add(numeroInput);
+            numeroInput = 0; 
+        }
+    }
+
+    private void ContarTerminadosEn3()
+    {
+        if (numeros.Count == 10)
+        {
+            cantidadTerminadosEn3 = ContarNumerosTerminadosEn3(numeros.ToArray());
+        }
+        else
+        {
+            cantidadTerminadosEn3 = -1; 
+        }
+    }
+
+    private int ContarNumerosTerminadosEn3(int[] arreglo)
+    {
+        int count = 0;
+
+        foreach (var numero in arreglo)
+        {
+            if (numero % 10 == 3)
+            {
+                count++;
+            }
+        }
+
+        return count; 
+    }
+}

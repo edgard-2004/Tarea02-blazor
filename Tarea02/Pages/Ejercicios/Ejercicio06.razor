@@ -1,0 +1,54 @@
+﻿@page "/Ejercicio6"
+
+<h3>Este programa convierte código ASCII a carácter</h3>
+
+<div class="m-3">
+    <label for="codigoAscii">Ingresa un código ASCII: </label>
+    <input type="number" @bind="codigoAscii" id="codigoAscii" />
+</div>
+
+<div class="m-3">
+    <button @onclick="ConvertirAscii">Convertir a Carácter</button>
+</div>
+
+@if (!string.IsNullOrEmpty(resultado))
+{
+    <p>El carácter correspondiente es: '@resultado'</p>
+}
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <p style="color:red">@error</p>
+}
+
+@code {
+    private int codigoAscii;
+    private string resultado = string.Empty;
+    private string error = string.Empty;
+
+    private void ConvertirAscii()
+    {
+        try
+        {
+            resultado = ObtenerCaracterAscii(codigoAscii).ToString();
+            error = string.Empty;
+        }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            error = ex.Message;
+            resultado = string.Empty;
+        }
+    }
+
+    private char ObtenerCaracterAscii(int codigoAscii)
+    {
+        if (codigoAscii >= 0 && codigoAscii <= 255)
+        {
+            return (char)codigoAscii;
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException("El código ASCII debe estar entre 0 y 127.");
+        }
+    }
+}

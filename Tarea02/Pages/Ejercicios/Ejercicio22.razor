@@ -1,0 +1,36 @@
+﻿@page "/Ejercicio22"
+
+<h3>Este programa verifica si un número es múltiplo de 5, retorna 1 si es multiplo y 0 sino</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numero" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="VerificarMultiploDeCinco">Verificar</button>
+</div>
+
+@if (resultado == 1)
+{
+    <p>El número es múltiplo de 5, 1.</p>
+}
+else if (resultado == 0)
+{
+    <p>El número no es múltiplo de 5, 0.</p>
+}
+
+@code {
+    private int numero;
+    private int? resultado = null;
+
+    private void VerificarMultiploDeCinco()
+    {
+        resultado = EsMultiploDeCinco(numero);
+    }
+
+    private int EsMultiploDeCinco(int num)
+    {
+        return (num % 5 == 0) ? 1 : 0;
+    }
+}

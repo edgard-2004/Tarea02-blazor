@@ -1,0 +1,68 @@
+﻿@page "/Ejercicio32"
+
+<h3>Este programa calcula el promedio de un vector de 10 posiciones.</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numeroInput" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="AgregarNumero">Agregar Número</button>
+    <button @onclick="CalcularPromedio">Calcular Promedio</button>
+</div>
+
+@if (numeros.Count > 0)
+{
+    <h4>Números Ingresados:</h4>
+    <ul>
+        @foreach (var number in numeros)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
+
+@if (promedio.HasValue)
+{
+    <p>El promedio del vector es: @promedio.Value</p>
+}
+
+@code {
+    private List<int> numeros = new List<int>();
+    private int numeroInput;
+    private double? promedio = null; 
+
+    private void AgregarNumero()
+    {
+        if (numeros.Count < 10)
+        {
+            numeros.Add(numeroInput);
+            numeroInput = 0; 
+        }
+    }
+
+    private void CalcularPromedio()
+    {
+        if (numeros.Count == 10)
+        {
+            promedio = ObtenerPromedio(numeros.ToArray());
+        }
+        else
+        {
+            promedio = null; 
+        }
+    }
+
+    private double ObtenerPromedio(int[] arreglo)
+    {
+        double suma = 0;
+
+        foreach (var numero in arreglo)
+        {
+            suma += numero;
+        }
+
+        return suma / arreglo.Length; 
+    }
+}

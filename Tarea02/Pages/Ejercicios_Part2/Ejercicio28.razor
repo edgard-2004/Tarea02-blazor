@@ -1,0 +1,101 @@
+﻿@page "/Ejercicio28"
+
+<h3>Este programa cuenta cuántos números primos hay en un vector de 10 posiciones.</h3>
+
+<div class="m-3">
+    <label for="numero">Ingresa un número: </label>
+    <input type="number" @bind="numeroInput" id="numero" />
+</div>
+
+<div class="m-3">
+    <button @onclick="AgregarNumero">Agregar Número</button>
+    <button @onclick="ContarPrimos">Contar Primos</button>
+</div>
+
+@if (numeros.Count > 0)
+{
+    <h4>Números Ingresados:</h4>
+    <ul>
+        @foreach (var number in numeros)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
+
+@if (cantidadPrimos >= 0)
+{
+    <p>Cantidad de Números Primos: @cantidadPrimos</p>
+}
+
+@if (mensaje != null)
+{
+    <p style="color:red">@mensaje</p>
+}
+
+@code {
+    private List<int> numeros = new List<int>();
+    private int numeroInput;
+    private int cantidadPrimos = -1;
+    private string mensaje = null;
+
+    private void AgregarNumero()
+    {
+        if (numeros.Count < 10)
+        {
+            numeros.Add(numeroInput);
+            numeroInput = 0;
+            mensaje = null;
+        }
+        else
+        {
+            mensaje = "No puedes agregar más de 10 números.";
+        }
+    }
+
+    private void ContarPrimos()
+    {
+        if (numeros.Count == 10)
+        {
+            cantidadPrimos = ContarPrimosEnArreglo(numeros.ToArray());
+            mensaje = null; // Limpiar mensaje de error si todo está bien
+        }
+        else
+        {
+            mensaje = "Debes ingresar exactamente 10 números antes de contar los primos.";
+            cantidadPrimos = -1; // Resetear el valor para evitar mostrar un valor incorrecto
+        }
+    }
+
+    private int ContarPrimosEnArreglo(int[] arreglo)
+    {
+        int count = 0;
+
+        foreach (var number in arreglo)
+        {
+            if (EsPrimo(number))
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    private bool EsPrimo(int numero)
+    {
+        if (numero <= 1) return false;
+        if (numero == 2) return true;
+        if (numero % 2 == 0) return false;
+
+        for (int i = 3; i <= Math.Sqrt(numero); i += 2)
+        {
+            if (numero % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

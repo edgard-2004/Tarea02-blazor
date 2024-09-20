@@ -1,0 +1,155 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Tarea02
+build_property.RootNamespace = Tarea02
+build_property.ProjectDir = C:\Users\Edgard\Desktop\Amadis genao\Tarea02\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Edgard\Desktop\Amadis genao\Tarea02
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/AcercaDe.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNlcmNhRGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicio.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio02.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8wMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio04.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8wNC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio06.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8wNi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio08.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8wOC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio10.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8xMC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio12.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8xMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio14.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8xNC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio16.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8xNi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio18.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8xOC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio20.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8yMC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio22.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8yMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios/Ejercicio24.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc1xFamVyY2ljaW8yNC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio26.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8yNi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio28.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8yOC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio30.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8zMC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio32.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8zMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio34.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8zNC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio36.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8zNi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio38.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW8zOC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio40.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW80MC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio42.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW80Mi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio44.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW80NC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio46.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW80Ni5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio48.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW80OC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Ejercicios_Part2/Ejercicio50.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWplcmNpY2lvc19QYXJ0MlxFamVyY2ljaW81MC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Layout/AcercaDe.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEFjZXJjYURlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-bu388wstom
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-e8khk323vx
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bzz54m242x
+
+[C:/Users/Edgard/Desktop/Amadis genao/Tarea02/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jgsv07h7f0

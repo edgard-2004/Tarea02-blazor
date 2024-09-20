@@ -1,0 +1,69 @@
+﻿@page "/Ejercicio46"
+
+<h3>Este programa encuentra la fila donde se encuentra por primera vez el número mayor en una matriz de 4x4.</h3>
+
+<div class="m-3">
+    <h4>Ingresa los datos de la matriz:</h4>
+    @for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+                    <label for="matriz-@i-@j">Elemento [@i, @j]: </label>
+                    <input type="number" @bind="matriz[i, j]" id="matriz-@i-@j" />
+        }
+    }
+</div>
+
+<div class="m-3">
+    <button @onclick="EncontrarFilaDelMayor">Encontrar Fila del Mayor Número</button>
+</div>
+
+@if (fila >= 0)
+{
+        <p>El mayor número de la matriz se encuentra por primera vez en la fila: @fila.</p>
+}
+
+@code {
+    private int[,] matriz = new int[4, 4];
+    private int fila = -1; 
+
+    private void EncontrarFilaDelMayor()
+    {
+        int mayor = ObtenerMayorDeLaMatriz(matriz);
+        fila = ObtenerFilaDelMayor(matriz, mayor);
+    }
+
+    private int ObtenerMayorDeLaMatriz(int[,] matriz)
+    {
+        int mayor = matriz[0, 0];
+
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (matriz[i, j] > mayor)
+                {
+                    mayor = matriz[i, j];
+                }
+            }
+        }
+
+        return mayor; 
+    }
+
+    private int ObtenerFilaDelMayor(int[,] matriz, int valor)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (matriz[i, j] == valor)
+                {
+                    return i; 
+                }
+            }
+        }
+
+        return -1; 
+    }
+}

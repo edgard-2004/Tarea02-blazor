@@ -1,0 +1,93 @@
+﻿@page "/Ejercicio50"
+<h3>Este programa cuenta cuántas veces se repite la moda en una matriz de 5x5.</h3>
+
+<div class="m-3">
+    <h4>Ingresa los datos de la matriz:</h4>
+    @for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+                    <label for="matriz-@i-@j">Elemento [@i, @j]: </label>
+                    <input type="number" @bind="matriz[i, j]" id="matriz-@i-@j" />
+        }
+    }
+</div>
+
+<div class="m-3">
+    <button @onclick="ContarModa">Contar Repeticiones de la Moda</button>
+</div>
+
+@if (cantidadModa > 0)
+{
+        <p>La moda de la matriz se repite @cantidadModa veces.</p>
+}
+else
+{
+        <p>No hay moda en la matriz.</p>
+}
+
+@code {
+    private int[,] matriz = new int[5, 5];
+    private int cantidadModa = 0;
+
+    private void ContarModa()
+    {
+        var moda = ObtenerModa(matriz);
+        cantidadModa = ContarRepeticiones(matriz, moda);
+    }
+
+    private int ObtenerModa(int[,] matriz)
+    {
+        var frecuencia = new Dictionary<int, int>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                if (frecuencia.ContainsKey(matriz[i, j]))
+                {
+                    frecuencia[matriz[i, j]]++;
+                }
+                else
+                {
+                    frecuencia[matriz[i, j]] = 1;
+                }
+            }
+        }
+
+        
+        int moda = matriz[0, 0];
+        int maxFrecuencia = 0;
+
+        foreach (var par in frecuencia)
+        {
+            if (par.Value > maxFrecuencia)
+            {
+                maxFrecuencia = par.Value;
+                moda = par.Key;
+            }
+        }
+
+        return maxFrecuencia > 1 ? moda : -1; 
+    }
+
+    private int ContarRepeticiones(int[,] matriz, int valor)
+    {
+        if (valor == -1) return 0; 
+
+        int count = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                if (matriz[i, j] == valor)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count; 
+    }
+}
